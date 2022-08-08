@@ -1,0 +1,811 @@
+/* ------------------------------Root------------------------------ */ 
+:root {
+    --main-fz: 16px;
+    --font-clr: #7E7E7E;
+    --border: 1px solid aliceblue;
+    --color: #1B1B1B;
+    --black: #000;
+    --line-height: 156%;
+}
+/* ------------------------------Null style------------------------------ */ 
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size:  inherit;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-family: Montserrat;
+    font-size: var(--main-fz);
+    color: var(--black);
+}
+.wrapper {
+    max-width: 1440px;
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #126477;
+}
+/* ------------------------------Universal classes------------------------------ */
+._ibg {
+    position: relative;
+}
+._ibg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0;
+    object-fit: cover;
+}
+._button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 215px;
+    min-height: 36px;
+    text-transform: uppercase;
+    border: 1px solid aliceblue;
+    padding: 10px 0;
+}
+._title {
+    font-family: Roboto;
+    text-transform: uppercase;
+}
+/* ------------------------------Header------------------------------ */
+
+.header {
+    width: 100%;
+    background: #fff;
+}
+.nav {
+    max-width: 1280px;
+    padding: 20px 0 28px 0;
+    margin: 0 auto;
+
+}
+.nav .logo {
+    display: none;
+}
+.nav__menu {
+    display: flex;
+    justify-content: space-between;
+}
+.nav__menu .logo {
+    padding-top: 8px;
+    display: inline-block;
+}
+.nav__links {
+    display: flex;
+    gap: 32px;
+    line-height: 150%;
+
+}
+.nav__item a {
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 10px;
+    color: #0000004d;
+}
+.nav__button a {
+    background: var(--black);
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    
+}
+
+.toggle {
+    position: absolute;
+    right: 25px;
+    top: 16px;
+    display: none;
+    height: 20px;
+    cursor: pointer;
+}
+.bars {
+    background: var(--black);
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    position: relative;
+    transition: 0.5s;
+
+}
+.bars::before, .bars::after {
+    content: "";
+    background: var(--black);
+    display: inline-block;
+    height: 2px;
+    position: absolute;
+    width: 20px;
+    transition: 0.5s;
+
+}
+.bars::before {
+    top: 8px;
+}
+.bars::after {
+    top: -8px;
+}
+
+.toggle.active .bars {
+    background: none;
+
+}
+.toggle.active .bars::before {
+    transform: rotate(45deg);
+    top: -1px;
+
+}
+.toggle.active .bars::after {
+    transform: rotate(-45deg);
+    top: -1px;
+
+}
+/* ------------------------------Page------------------------------ */
+.page {
+    flex: 1 1 auto;
+}
+.page > * {
+    margin-bottom: 16px;
+}
+.page__main-block {
+}
+.page__products {
+}
+.page__about {
+}
+.page__journal {
+}
+.page__more {
+}
+.page__review {
+}
+/* ------------------------------Main block------------------------------ */
+.main-block {
+    position: relative;
+    text-align: center;
+}
+.main-block__body {
+    padding: 215px 0 275px;
+    position: relative;
+    color: aliceblue;
+    z-index: 2;
+}
+.main-block__title {
+    font-size: 57px;
+}
+.main-block__subtitle {
+    padding: 33px 0 60px 0;
+    line-height: var(--line-height);
+}
+._buttons {
+    display: inline-flex;
+}
+.main-block__button {
+}
+.main-block__button:not(:last-child){
+    margin-right: 20px;
+}
+.main-block__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0; 
+    object-position: center;
+}
+.main-block__buttons {
+}
+/* ------------------------------Products------------------------------ */
+.products {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between; 
+    
+}
+.product {
+    position: relative;
+    width: 710px;
+    display: flex;
+    justify-content: center;
+}
+.product:not(:last-child) {
+    margin-right: 20px;
+}
+.product__content {
+    position: relative;
+    z-index: 10;
+    padding: 310px 143px 30px;
+    margin: 0 auto;
+    color: aliceblue;
+    text-align: center;
+}
+.product__title {
+    text-transform: capitalize;
+    font-size: 34px;
+    letter-spacing: 0.5;
+    line-height: 123%;
+}
+.product__title:not(:last-child) {
+    padding-bottom: 13px;
+}
+.product__about > *:not(:last-child){
+    padding-bottom: 9px;
+}
+.product__text {
+    display: flex;
+    flex-direction: column;
+    line-height: var(--line-height);
+}
+.product__buttons {
+    display: inline-flex;
+    padding-top: 25px;
+}
+.product__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.product__button:not(:last-child) {
+    padding-right: 125px;
+}
+.product__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    object-position: center;
+}
+/* ------------------------------About------------------------------ */
+.about {
+    background-color: #0B0B0B;
+}
+.about__content {
+    width: 558px;
+    text-align: center;
+    color: #fff;
+    padding-top: 66px;
+    padding-bottom: 88px;
+    margin: auto;
+}
+.about__title {
+    font-size: 38px;
+}
+.about__content-image {
+    position: relative;
+    padding: 180px;
+}
+.about__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    object-position: center;
+}
+.about__text {
+    line-height: var(--line-height);
+}
+/* ------------------------------Journal------------------------------ */
+.journal {
+    position: relative;
+}
+.journal__content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 288px 0;
+}
+.journal__title {
+    color: aliceblue;
+    font-size: 38px;
+}
+.journal__buttons {   
+    padding-top: 28px;
+}
+.journal__button {
+}
+.journal__button:not(:last-child) {
+    margin-right: 34px;
+}
+.journal__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;left: 0; 
+    object-position: center;
+}
+/* ------------------------------More------------------------------ */
+.more {
+    position: relative;
+    width: 100vw;
+}
+.more-content {
+    position: relative;
+    z-index: 5;
+    max-width: 417px;
+    padding: 136px 0 136px 0;
+    margin-left: 60vw;
+}
+.more-title {
+    color: var(--color);
+    font-size: 35px;
+    padding-bottom: 33px;
+    white-space: nowrap;
+
+}
+.more-subtitle {
+    line-height: var(--line-height);
+    padding-bottom: 12px;
+}
+.more-button {
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 125%;
+    color: var(--color);
+    
+}
+.more-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    object-position: left;
+}
+/* ------------------------------review------------------------------ */
+.swiper {
+    height: 222px;
+
+}
+.swiper-slide {
+    max-width: 395px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.slide-text {
+    font-family: Roboto;
+    font-size: 20px;
+    max-width: 330px;
+}
+.slide-image__wrapper {
+    position: relative;
+    width: 284px;
+    height: 70px;
+}
+.slide-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    object-position: center;
+}
+.pagination {
+    padding: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 4px;
+}
+.pagination span {
+    min-width: 8px;
+    border-radius: 0;
+    background-color: var(--color);
+}
+.review {
+}
+.review-swiper {
+}
+/* ------------------------------Footer------------------------------ */
+.footer {
+    position: relative;
+    bottom: 0; right: 0; left: 0;
+    background: var(--black);
+    color: aliceblue;
+}
+.footer__container {
+    display: flex;
+    max-width: 998px;
+    margin: 0 auto;
+    padding: 96px 0;
+}
+.footer-links {
+    display: flex;
+}
+.footer-nav__section {
+}
+.footer-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+
+}
+.footer-nav {
+    width: 157px;
+    
+}
+.footer-nav__item {
+}
+.footer-nav a {
+    font-size: 12px;
+    color: var(--font-clr);
+    
+}
+.footer-nav > *:not(:last-child) {
+    padding-bottom: 8px;
+}
+.footer-nav__button {
+}
+.footer-nav__button a {
+    line-height: 90%;
+}
+.footer-section {
+    padding-right: 10px;
+    width: 366px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.footer-section .footer-title {
+    padding-bottom: 42px;
+}
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.footer-content a {
+}
+.footer-text {
+    color: var(--font-clr);
+    font-size: 12px;
+    padding-bottom: 15px;
+
+}
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 366px;
+    height: 45px;
+    border: 1px solid aliceblue;
+}
+.newsletter-content__text {
+    padding: 15px;
+}
+.newsletter__button {
+    padding: 14px 25px;
+    background-color: aliceblue;
+}
+.newsletter-content a {
+    color: var(--font-clr);
+
+}
+.social {
+    margin: 50px 0;
+}
+.social a:not(:last-child) {
+    padding-right: 25px;
+}
+.by {
+    letter-spacing: 2px;
+
+}
+.by a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------MEDIA QUERY------------------------------ */
+@media screen and (max-width: 1300px) {
+    .nav {
+        padding-right: 2vw;
+        padding-left: 2vw;
+    }
+    .nav__links a {
+        font-size: 45%;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
+    .products {
+        flex-wrap: wrap;
+    }
+    .product {
+        margin: 0 auto;
+       
+    }
+    .product:not(:first-child) {
+        margin-top: 10px;
+    }
+    .product:not(:last-child) {
+        margin-right: auto;
+    }
+
+    .journal__content-container {
+        width: 50vw;        
+    }
+    .journal__title {
+        font-size: 4vw;
+    }
+
+    .more-content {
+        margin-left: 50vw;
+    }
+
+    .footer__container {
+        width: 560px;
+        flex-wrap: wrap;
+    }
+    .footer-section {
+        padding-top: 50px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        position: relative;
+        padding: 20px 0 20px 0;
+    }
+    .nav__links{
+        display: none;
+    }
+    .nav .logo {
+        display: inline-block;
+        padding-left: 20px;
+    }
+    .nav__menu .logo {
+        display: none;
+    }
+    .toggle {
+        display: inline-block;
+    }
+    .nav__menu {
+        position: absolute;
+        display: block;
+        top: 99%; left: 0; right: 0;
+        z-index: 10;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: 0.5s ease-out;
+
+    }
+    .nav__menu.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        
+    }
+    .nav__menu .nav__links {
+        display: block;
+        padding: 10px 0 0 20px;
+        width: 100vw;
+        background-color: var(--black);
+    }
+    .nav__menu .nav__links:last-child {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+    .nav__links li {
+        width: 100vw;
+    }
+    .nav__item a {
+        display: inline-block;
+        width: 90%;
+        border-bottom: 1px solid gray;
+        padding: 5px 0;
+        color: aliceblue;
+    }
+    .nav__links .nav__button a{
+        display: inline-block;
+        border: 1px solid aliceblue;
+        width: 90%;
+        
+    }
+    .nav__button {
+        margin-top: 10px;
+    }
+
+    .main-block__title {
+        font-size: 5vw;
+    }
+    .main-block__subtitle, ._button {
+        font-size: 3vw;
+    }
+
+    .product__title, .product__text, .product__button {
+        font-size: 75%;
+    }
+
+    .about__title {
+        font-size: 5vw;
+    }
+    .about__text {
+        font-size: 2.5vw;
+    }
+
+    .journal__button:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .more-title {
+        font-size: 4vw;
+    }
+    .more-subtitle, .more-button {
+        font-size: 2vw;
+    }
+
+    .footer__container {
+        width: 470px;
+        flex-wrap: wrap;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 30px;
+        column-gap: 130px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    .about__content {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    ._button {
+        min-width: 140px;
+        min-height: 28px;
+    }
+    .product__content {
+        margin-left: -50px;
+    }
+    .about__text {
+        font-size: 3vw;
+    }
+    .about__image {
+        width: 355px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .more-title {
+        font-size: 5vw;
+    }
+    .more-subtitle, .more-button {
+        font-size: 3vw;
+    }
+
+    .footer__container {
+        width: 320px;
+    }
+    .footer-nav__section {
+        width: 200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .footer-section {
+        align-items: center;
+    }
+    .footer-newsletter {
+        align-items: center;
+    }
+    .footer-content {
+        align-items: center;
+    }
+    .newsletter-content {
+        width: 90vw;
+        white-space: nowrap;
+
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .product__title, .product__text, .product__button {
+        font-size: 50%;
+    }
+    .about__image {
+        width: 260px;
+        height: auto;
+        overflow: hidden;
+    }
+
+}
